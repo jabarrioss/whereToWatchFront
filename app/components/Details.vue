@@ -43,18 +43,13 @@ export default Vue.extend({
       return base_url
     },
     streaming_providers(){
+        let providers = "";
         if(!this.flick['watch/providers'].results.VE.flatrate){
             return "There are no streaming providers for this movie.";
         }
-        /*let providers = "";
         for (let i = 0; i < this.flick['watch/providers'].results.VE.flatrate.length; i++) {
             providers += this.flick['watch/providers'].results.VE.flatrate[i].provider_name + ", ";
-        }*/
-        let providers = [];
-        for (let i = 0; i < this.flick['watch/providers'].results.VE.flatrate.length; i++) {
-            providers.push(this.flick['watch/providers'].results.VE.flatrate[i].provider_name);
         }
-        providers = providers.join(", ");
         return providers;
     }
   }
